@@ -8,8 +8,7 @@ class CustomerAppBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:
-          const EdgeInsets.only(left: 24.0, right: 24, top: 55, bottom: 25),
+      padding: const EdgeInsets.only(right: 16, top: 55, bottom: 25),
       child: Row(
         children: [
           Image.asset(
