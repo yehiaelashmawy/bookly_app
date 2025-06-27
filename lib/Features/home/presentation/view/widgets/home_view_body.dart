@@ -1,3 +1,4 @@
+import 'package:bookly/Features/home/presentation/view/widgets/best_sellar_list_view_item.dart';
 import 'package:bookly/Features/home/presentation/view/widgets/custom_appbar.dart';
 import 'package:bookly/Features/home/presentation/view/widgets/featured_list_view.dart';
 import 'package:flutter/material.dart';
@@ -9,7 +10,7 @@ class HomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Padding(
-      padding: EdgeInsets.only(left: 16.0),
+      padding: EdgeInsets.only(left: 30.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -22,37 +23,10 @@ class HomeViewBody extends StatelessWidget {
             "Best Sellar",
             style: Styles.textStyle18,
           ),
-          BestSellarListViewItems(),
-        ],
-      ),
-    );
-  }
-}
-
-class BestSellarListViewItems extends StatelessWidget {
-  const BestSellarListViewItems({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return SizedBox(
-      height: 150,
-      child: Row(
-        children: [
-          AspectRatio(
-            aspectRatio: 2.7 / 4,
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(8),
-                image: const DecorationImage(
-                  fit: BoxFit.fill,
-                  image: NetworkImage(
-                    'https://m.media-amazon.com/images/I/81q77Q39nEL._UF1000,1000_QL80_.jpg',
-                  ),
-                ),
-              ),
-            ),
+          SizedBox(
+            height: 20,
           ),
-          const Column(),
+          BestSellarListViewItems(),
         ],
       ),
     );
