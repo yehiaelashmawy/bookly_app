@@ -1,7 +1,6 @@
 import 'package:bookly/Features/home/presentation/view/widgets/custom_appbar.dart';
 import 'package:bookly/Features/home/presentation/view/widgets/featured_list_view.dart';
 import 'package:flutter/material.dart';
-
 import '../../../../../core/utils/style.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -21,7 +20,7 @@ class HomeViewBody extends StatelessWidget {
           ),
           Text(
             "Best Sellar",
-            style: Style.titleMeduim,
+            style: Styles.textStyle18,
           ),
           BestSellarListViewItems(),
         ],
