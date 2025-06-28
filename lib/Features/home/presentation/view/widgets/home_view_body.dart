@@ -1,4 +1,4 @@
-import 'package:bookly/Features/home/presentation/view/widgets/best_sellar_list_view_item.dart';
+import 'package:bookly/Features/home/presentation/view/widgets/best_sellar_list_view.dart';
 import 'package:bookly/Features/home/presentation/view/widgets/custom_appbar.dart';
 import 'package:bookly/Features/home/presentation/view/widgets/featured_list_view.dart';
 import 'package:flutter/material.dart';
@@ -9,26 +9,37 @@ class HomeViewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
-      padding: EdgeInsets.only(left: 30.0),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          CustomerAppBar(),
-          FeaturedBoxListView(),
-          SizedBox(
-            height: 50,
+    return const CustomScrollView(
+      slivers: [
+        SliverToBoxAdapter(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              CustomerAppBar(),
+              FeaturedBoxListView(),
+              SizedBox(
+                height: 50,
+              ),
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 30),
+                child: Text(
+                  "Best Sellar",
+                  style: Styles.textStyle18,
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+            ],
           ),
-          Text(
-            "Best Sellar",
-            style: Styles.textStyle18,
+        ),
+        SliverToBoxAdapter(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 30),
+            child: BEstSellarListView(),
           ),
-          SizedBox(
-            height: 20,
-          ),
-          BestSellarListViewItems(),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
