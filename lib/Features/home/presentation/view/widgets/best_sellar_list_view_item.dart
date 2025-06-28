@@ -1,5 +1,6 @@
 import 'package:bookly/Features/home/presentation/view/widgets/book_rating.dart';
 import 'package:bookly/core/utils/app_routers.dart';
+import 'package:bookly/core/utils/assets.dart';
 import 'package:bookly/core/utils/style.dart';
 import 'package:bookly/costansts.dart';
 import 'package:flutter/material.dart';
@@ -22,11 +23,12 @@ class BestSellarListViewItems extends StatelessWidget {
               aspectRatio: 2.7 / 4,
               child: Container(
                 decoration: BoxDecoration(
+                  color: Colors.red,
                   borderRadius: BorderRadius.circular(8),
                   image: const DecorationImage(
                     fit: BoxFit.fill,
-                    image: NetworkImage(
-                      'https://m.media-amazon.com/images/I/81q77Q39nEL._UF1000,1000_QL80_.jpg',
+                    image: AssetImage(
+                      AssetsData.testImage,
                     ),
                   ),
                 ),
