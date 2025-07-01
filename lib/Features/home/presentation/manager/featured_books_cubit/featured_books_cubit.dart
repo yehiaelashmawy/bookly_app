@@ -1,3 +1,4 @@
+// ignore: depend_on_referenced_packages
 import 'package:bloc/bloc.dart';
 import 'package:bookly/Features/home/data/models/books_model/books_model.dart';
 import 'package:bookly/Features/home/data/repos/home_repo.dart';
@@ -10,7 +11,7 @@ class FeaturedBooksCubit extends Cubit<FeaturedBooksState> {
 
   final HomeRepo homeRepo;
 
-  Future<void> fetchFeaturedBooks() async {
+  Future<void> fetchNewsetBooks() async {
     emit(FeaturedBooksLoading());
     var result = await homeRepo.fetchFeturedBooks();
     result.fold((failure) {
