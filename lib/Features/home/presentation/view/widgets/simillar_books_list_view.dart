@@ -13,7 +13,10 @@ class SimillarBooksListView extends StatelessWidget {
           itemBuilder: (context, index) {
             return const Padding(
               padding: EdgeInsets.symmetric(horizontal: 5.0),
-              child: CustomBookImage(),
+              child: CustomBookImage(
+                imageUrl:
+                    'https://media.springernature.com/full/springer-static/cover-hires/book/978-1-4842-0556-3',
+              ),
             );
           }),
     );

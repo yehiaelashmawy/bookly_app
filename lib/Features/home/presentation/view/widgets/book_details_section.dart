@@ -14,7 +14,10 @@ class BookDetailsSection extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * .2),
-          child: const CustomBookImage(),
+          child: const CustomBookImage(
+            imageUrl:
+                'https://media.springernature.com/full/springer-static/cover-hires/book/978-1-4842-0556-3',
+          ),
         ),
         const SizedBox(
           height: 34,
