@@ -16,7 +16,7 @@ class NewsetBooksCubit extends Cubit<NewsetBooksState> {
     result.fold((failure) {
       emit(NewsetBooksFailure(failure.erroMassege));
     }, (books) {
-      emit(NewsetBooksSrccuss(books));
+      emit(NewsetBooksSuccess(books));
     });
   }
 }

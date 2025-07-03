@@ -12,7 +12,7 @@ class BEstSellarListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<NewsetBooksCubit, NewsetBooksState>(
       builder: (context, state) {
-        if (state is NewsetBooksSrccuss) {
+        if (state is NewsetBooksSuccess) {
           return ListView.builder(
             physics: const NeverScrollableScrollPhysics(),
             shrinkWrap: true,

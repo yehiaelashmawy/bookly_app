@@ -17,8 +17,8 @@ final class NewsetBooksFailure extends NewsetBooksState {
   const NewsetBooksFailure(this.erroMassege);
 }
 
-final class NewsetBooksSrccuss extends NewsetBooksState {
+final class NewsetBooksSuccess extends NewsetBooksState {
   final List<BooksModel> books;
 
-  const NewsetBooksSrccuss(this.books);
+  const NewsetBooksSuccess(this.books);
 }
