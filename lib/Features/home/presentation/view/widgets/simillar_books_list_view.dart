@@ -16,13 +16,15 @@ class SimillarBooksListView extends StatelessWidget {
           return SizedBox(
             height: MediaQuery.of(context).size.height * 0.14,
             child: ListView.builder(
+                itemCount: state.books.length,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
-                  return const Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 5.0),
+                  return Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 5.0),
                     child: CustomBookImage(
                       imageUrl:
-                          'https://media.springernature.com/full/springer-static/cover-hires/book/978-1-4842-0556-3',
+                          state.books[index].volumeInfo.imageLinks?.thumbnail ??
+                              '',
                     ),
                   );
                 }),

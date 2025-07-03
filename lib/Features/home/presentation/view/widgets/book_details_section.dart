@@ -1,3 +1,4 @@
+import 'package:bookly/Features/home/data/models/books_model/books_model.dart';
 import 'package:bookly/Features/home/presentation/view/widgets/book_rating.dart';
 import 'package:bookly/Features/home/presentation/view/widgets/books_action.dart';
 import 'package:bookly/Features/home/presentation/view/widgets/custom_book_image.dart';
@@ -5,7 +6,8 @@ import 'package:bookly/core/utils/style.dart';
 import 'package:flutter/material.dart';
 
 class BookDetailsSection extends StatelessWidget {
-  const BookDetailsSection({super.key});
+  const BookDetailsSection({super.key, required this.booksModel});
+  final BooksModel booksModel;
 
   @override
   Widget build(BuildContext context) {
@@ -14,17 +16,17 @@ class BookDetailsSection extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * .2),
-          child: const CustomBookImage(
-            imageUrl:
-                'https://media.springernature.com/full/springer-static/cover-hires/book/978-1-4842-0556-3',
+          child: CustomBookImage(
+            imageUrl: booksModel.volumeInfo.imageLinks?.thumbnail ?? '',
           ),
         ),
         const SizedBox(
           height: 34,
         ),
-        const Text(
-          'The Jungle Book',
+        Text(
+          booksModel.volumeInfo.title!,
           style: Styles.textStyle30,
+          textAlign: TextAlign.center,
         ),
         const SizedBox(
           height: 6,
@@ -32,7 +34,7 @@ class BookDetailsSection extends StatelessWidget {
         Opacity(
           opacity: 0.7,
           child: Text(
-            'Rudyard Kipling',
+            booksModel.volumeInfo.authors![0],
             style: Styles.textStyle18.copyWith(
               fontStyle: FontStyle.italic,
               fontWeight: FontWeight.w500,
@@ -42,9 +44,9 @@ class BookDetailsSection extends StatelessWidget {
         const SizedBox(
           height: 18,
         ),
-        const BookRating(
-          rating: '3.6',
-          count: 1325,
+        BookRating(
+          rating: '4.2',
+          count: booksModel.volumeInfo.pageCount!,
           mainAxisAlignment: MainAxisAlignment.center,
         ),
         const SizedBox(

@@ -1,4 +1,3 @@
-import 'package:bookly/core/utils/app_routers.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -12,7 +11,7 @@ class CoustomBookDetailsAppBar extends StatelessWidget {
       children: [
         IconButton(
           onPressed: () {
-            GoRouter.of(context).push(AppRouters.kHomeView);
+            GoRouter.of(context).pop();
           },
           icon: const Icon(Icons.close),
         ),
