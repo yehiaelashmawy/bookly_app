@@ -14,10 +14,14 @@ class HomeRepoImpl implements HomeRepo {
     try {
       var data = await apiService.get(
           endPoint:
-              'volumes?Filtering=free-ebooks&Sorting=newest &q=computer science');
+              'volumes?Filtering=free-ebooks&Sorting=newest &q=computer science ');
       List<BooksModel> books = [];
       for (var item in data['items']) {
-        books.add(BooksModel.fromJson(item));
+        try {
+          books.add(BooksModel.fromJson(item));
+        } catch (e) {
+          books.add(BooksModel.fromJson(item));
+        }
       }
 
       return right(books);
