@@ -59,6 +59,31 @@ class HomeRepoImpl implements HomeRepo {
       );
     }
   }
+
+  @override
+  Future<Either<Failures, List<BooksModel>>> fetchSimaillarBooks(
+      {required String category}) async {
+    try {
+      var data = await apiService.get(
+          endPoint:
+              'volumes?Filtering=free-ebooks&q=subject:Programming&Sorting=relevance ');
+      List<BooksModel> books = [];
+      for (var item in data['items']) {
+        books.add(BooksModel.fromJson(item));
+      }
+
+      return right(books);
+    } catch (e) {
+      if (e is DioException) {
+        return left(
+          ServerFailures.fromDioException(e),
+        );
+      }
+      return left(
+        ServerFailures(e.toString()),
+      );
+    }
+  }
 }
 
 // import 'package:bookly/Features/home/data/models/book_model/book_model.dart';
